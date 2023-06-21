@@ -5,6 +5,7 @@ import axios from 'axios';
 
 import './Welcome.css';
 import fileContent from './tower.png';
+import { API_ROUTE } from '@/env.constants';
 
 // Import file using JavaScript module syntax
 
@@ -84,11 +85,11 @@ const Welcome: React.FC = () => {
       const apiStartTime = performance.now(); // Capture API start time
 
       const formData = new FormData();
-      formData.append('file', new Blob([fileContent]), 'example.txt');
+      formData.append('file', new Blob([fileContent]), 'tower.png');
 
-      const response = await axios.post('http://localhost:8000/api/upload', formData, {
+      const response = await axios.post(`${API_ROUTE.HOSTNAME}:${API_ROUTE.PORT}/${API_ROUTE.SPEED_TEST_API}`, formData, {
         headers: {
-          'Content-Type': 'multipart/form-data',
+          'Content-Type': API_ROUTE.CONTENT_TYPE,
         },
       });
 

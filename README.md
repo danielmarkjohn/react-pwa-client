@@ -4,8 +4,6 @@
 
 # P2P Speed Test - `v1`
 
-**Starter kit for modern web applications!**
-
 ## Synopsis
 
 This project is to setup a P2P Speed Test Application
